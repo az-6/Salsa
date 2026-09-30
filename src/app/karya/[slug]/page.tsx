@@ -27,6 +27,8 @@ export async function generateMetadata({
   };
 }
 
+const duaDigit = (n: number) => String(n).padStart(2, "0");
+
 export default async function ProjectPage({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
   const project = getProject(slug);
@@ -44,21 +46,31 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
   return (
     <>
       <article>
-        <header className="section project-header">
-          <div className="shell project-header-inner">
-            <div>
-              <h1 className="display display-l">{project.title}</h1>
-              <p className="lede project-subtitle">{project.subtitle}</p>
+        <header className="kain-kepala loom" data-bagian={project.title}>
+          <div className="selvedge">
+            <span className="selvedge-teks">
+              <span className="emas">
+                {duaDigit(position + 1)}/{duaDigit(projects.length)}
+              </span>
+              {" · "}
+              {project.kind}
+            </span>
+          </div>
+
+          <div className="kain-judul-blok">
+            <div className="kain-judul">
+              <h1 className="display-l">{project.title}</h1>
+              <p className="lede redup kain-sub">{project.subtitle}</p>
             </div>
 
-            <dl className="project-facts">
+            <dl className="fakta">
               <div>
                 <dt>Jenis</dt>
                 <dd>{project.kind}</dd>
               </div>
               <div>
                 <dt>Tahun</dt>
-                <dd>{project.year}</dd>
+                <dd className="num">{project.year}</dd>
               </div>
               <div>
                 <dt>Peran</dt>
@@ -66,28 +78,41 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
               </div>
               <div>
                 <dt>Lembar</dt>
-                <dd>{project.shots.length}</dd>
+                <dd className="num">{duaDigit(project.shots.length)}</dd>
               </div>
             </dl>
           </div>
+
+          <div className="selvedge selvedge-kanan">
+            <span className="selvedge-teks emas">{project.year}</span>
+          </div>
         </header>
 
-        <div className="shell project-body prose">
-          {project.body.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
+        <div className="kain-isi loom">
+          <div className="prose">
+            {project.body.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
         </div>
 
-        <div className="shell project-gallery">
-          <Gallery items={items} />
-        </div>
+        <Gallery items={items} />
       </article>
 
-      <nav className="shell project-next" aria-label="Proyek berikutnya">
-        <p className="callout">Proyek berikutnya</p>
-        <Link href={`/karya/${next.slug}`} className="display display-m link-underline tap">
-          {next.title}
+      <nav className="lemparan-berikut loom" aria-label="Proyek berikutnya">
+        <div className="selvedge">
+          <span className="selvedge-teks">Lemparan berikutnya</span>
+        </div>
+        <Link href={`/karya/${next.slug}`} className="lemparan-berikut-isi">
+          <span className="display-l">{next.title}</span>
+          <span className="redup">{next.subtitle}</span>
+          <span className="ujung-benang">Buka {next.shots.length} lembar</span>
         </Link>
+        <div className="selvedge selvedge-kanan">
+          <span className="selvedge-teks emas">
+            {duaDigit(((position + 1) % projects.length) + 1)}/{duaDigit(projects.length)}
+          </span>
+        </div>
       </nav>
     </>
   );

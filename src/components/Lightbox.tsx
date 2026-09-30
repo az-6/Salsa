@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef } from "react";
 
+import { IkonKanan, IkonKiri, IkonTutup } from "@/components/Ikon";
+
 export type LightboxItem = {
   src: string;
   width: number;
@@ -21,9 +23,12 @@ type Props = {
 /** Jarak geser minimum sebelum sebuah sentuhan dihitung sebagai ganti gambar. */
 const SWIPE_PX = 48;
 
+const duaDigit = (n: number) => String(n).padStart(2, "0");
+
 /**
- * Penampil gambar layar penuh. Dipakai bersama oleh galeri proyek dan halaman
- * sertifikat — lembar sertifikat mustahil dibaca pada lebar ponsel tanpa ini.
+ * Penampil lembar layar penuh, di atas kain nila yang sama. Dipakai galeri
+ * proyek dan halaman sertifikat; lembar penuh teks kecil mustahil dibaca di
+ * lebar ponsel tanpa ini.
  */
 export default function Lightbox({ items, index, onChange }: Props) {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -33,9 +38,7 @@ export default function Lightbox({ items, index, onChange }: Props) {
 
   const step = useCallback(
     (delta: number) =>
-      onChange(
-        index === null ? null : (index + delta + items.length) % items.length
-      ),
+      onChange(index === null ? null : (index + delta + items.length) % items.length),
     [index, items.length, onChange]
   );
 
@@ -51,7 +54,6 @@ export default function Lightbox({ items, index, onChange }: Props) {
     if (!dialog.open) dialog.showModal();
   }, [index]);
 
-  // Tanpa ini halaman di belakang ikut tergulir saat gambar disentuh di ponsel.
   useEffect(() => {
     if (index === null) return;
     document.body.classList.add("is-locked");
@@ -78,7 +80,7 @@ export default function Lightbox({ items, index, onChange }: Props) {
   const active = index === null ? null : items[index];
 
   return (
-    <dialog ref={dialogRef} className="viewer" onClose={close}>
+    <dialog ref={dialogRef} className="viewer" onClose={close} aria-label="Penampil lembar">
       {active ? (
         <div className="viewer-inner">
           <div
@@ -95,7 +97,6 @@ export default function Lightbox({ items, index, onChange }: Props) {
               const touch = event.changedTouches[0];
               const dx = touch.clientX - start.x;
               const dy = touch.clientY - start.y;
-              // Geseran tegak dibiarkan lewat supaya cubit-perbesar tetap bisa.
               if (Math.abs(dx) < SWIPE_PX || Math.abs(dx) < Math.abs(dy)) return;
 
               step(dx < 0 ? 1 : -1);
@@ -119,25 +120,32 @@ export default function Lightbox({ items, index, onChange }: Props) {
                 <>
                   <button
                     type="button"
+                    className="ikon-tombol"
                     onClick={() => step(-1)}
-                    aria-label="Gambar sebelumnya"
+                    aria-label="Lembar sebelumnya"
                   >
-                    ←
+                    <IkonKiri />
                   </button>
-                  <span className="viewer-count">
-                    {(index ?? 0) + 1} dari {items.length}
+                  <span className="viewer-count num">
+                    {duaDigit((index ?? 0) + 1)} / {duaDigit(items.length)}
                   </span>
                   <button
                     type="button"
+                    className="ikon-tombol"
                     onClick={() => step(1)}
-                    aria-label="Gambar berikutnya"
+                    aria-label="Lembar berikutnya"
                   >
-                    →
+                    <IkonKanan />
                   </button>
                 </>
               ) : null}
-              <button type="button" onClick={close} className="viewer-close">
-                Tutup
+              <button
+                type="button"
+                className="ikon-tombol merah"
+                onClick={close}
+                aria-label="Tutup penampil"
+              >
+                <IkonTutup />
               </button>
             </div>
           </div>

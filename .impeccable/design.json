@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-01T00:00:00Z",
+  "title": "Design System: Lungsi & Pakan",
+  "extensions": {
+    "colorMeta": {
+      "nila": {
+        "role": "neutral",
+        "displayName": "Nila",
+        "canonical": "#1c2541",
+        "tonalRamp": ["#0b0f1c", "#151c33", "#1c2541", "#2b3760", "#3f4d7f", "#6473a3", "#98a4c8", "#dfe3f0"]
+      },
+      "nila-dalam": {
+        "role": "neutral",
+        "displayName": "Nila Dalam",
+        "canonical": "#151c33",
+        "tonalRamp": ["#080b14", "#0f1425", "#151c33", "#222d51", "#344374", "#56659b", "#8d9ac1", "#d9dded"]
+      },
+      "katun": {
+        "role": "neutral",
+        "displayName": "Katun",
+        "canonical": "#ece4d2",
+        "tonalRamp": ["#2a251b", "#4d4531", "#746a4c", "#9c9068", "#c1b58d", "#d9cfb2", "#ece4d2", "#f8f4ec"]
+      },
+      "katun-30": {
+        "role": "neutral",
+        "displayName": "Katun 30 (benang terlihat)",
+        "canonical": "rgba(236, 228, 210, 0.3)",
+        "tonalRamp": ["rgba(236,228,210,0.045)", "rgba(236,228,210,0.08)", "rgba(236,228,210,0.12)", "rgba(236,228,210,0.2)", "rgba(236,228,210,0.3)", "rgba(236,228,210,0.5)", "rgba(236,228,210,0.7)", "rgba(236,228,210,1)"]
+      },
+      "katun-12": {
+        "role": "neutral",
+        "displayName": "Katun 12 (benang samar)",
+        "canonical": "rgba(236, 228, 210, 0.12)",
+        "tonalRamp": ["rgba(236,228,210,0.045)", "rgba(236,228,210,0.08)", "rgba(236,228,210,0.12)", "rgba(236,228,210,0.2)", "rgba(236,228,210,0.3)", "rgba(236,228,210,0.5)", "rgba(236,228,210,0.7)", "rgba(236,228,210,1)"]
+      },
+      "lusi-warna": {
+        "role": "neutral",
+        "displayName": "Lusi (tekstur lungsi)",
+        "canonical": "rgba(236, 228, 210, 0.045)",
+        "tonalRamp": ["rgba(236,228,210,0.02)", "rgba(236,228,210,0.045)", "rgba(236,228,210,0.08)", "rgba(236,228,210,0.12)", "rgba(236,228,210,0.2)", "rgba(236,228,210,0.3)", "rgba(236,228,210,0.5)", "rgba(236,228,210,1)"]
+      },
+      "redup": {
+        "role": "neutral",
+        "displayName": "Redup (nila dicerahkan)",
+        "canonical": "#a8b0cc",
+        "tonalRamp": ["#1c2035", "#333b58", "#4d577c", "#69749e", "#8790b7", "#a8b0cc", "#c8cdde", "#e7e9f1"]
+      },
+      "mengkudu": {
+        "role": "primary",
+        "displayName": "Mengkudu",
+        "canonical": "#b5302a",
+        "tonalRamp": ["#2e0907", "#561310", "#801d18", "#b5302a", "#c93b33", "#e8695f", "#f07d74", "#fbe1de"]
+      },
+      "mengkudu-terang": {
+        "role": "primary",
+        "displayName": "Mengkudu Terang",
+        "canonical": "#e8695f",
+        "tonalRamp": ["#2e0907", "#561310", "#801d18", "#b5302a", "#c93b33", "#e8695f", "#f07d74", "#fbe1de"]
+      },
+      "mengkudu-hover": {
+        "role": "primary",
+        "displayName": "Mengkudu Hover",
+        "canonical": "#f07d74",
+        "tonalRamp": ["#2e0907", "#561310", "#801d18", "#b5302a", "#c93b33", "#e8695f", "#f07d74", "#fbe1de"]
+      },
+      "mengkudu-tekan": {
+        "role": "primary",
+        "displayName": "Mengkudu Tekan",
+        "canonical": "#c93b33",
+        "tonalRamp": ["#2e0907", "#561310", "#801d18", "#b5302a", "#c93b33", "#e8695f", "#f07d74", "#fbe1de"]
+      },
+      "emas": {
+        "role": "secondary",
+        "displayName": "Emas",
+        "canonical": "#c9a14a",
+        "tonalRamp": ["#2b2110", "#4f3d1c", "#765c2a", "#9e7c38", "#c9a14a", "#d9ba74", "#e8d3a3", "#f6ecd6"]
+      }
+    },
+    "typographyMeta": {
+      "nama": { "displayName": "Nama", "purpose": "Hanya nama pemilik di viewport pertama beranda, dua baris kapital dengan pita gambar melintas di antaranya. Batas 11rem adalah pengecualian permukaan Experience, bukan tangga display umum." },
+      "display-l": { "displayName": "Display L", "purpose": "Judul halaman dan judul lemparan berikutnya." },
+      "display-m": { "displayName": "Display M", "purpose": "Judul baris pakan, ajakan footer, judul sertifikat." },
+      "catatan": { "displayName": "Catatan", "purpose": "Paragraf pembuka bio di beranda; satu-satunya isi berukuran besar." },
+      "lede": { "displayName": "Lede", "purpose": "Kalimat pengantar di bawah judul halaman, biasanya redup." },
+      "body": { "displayName": "Body", "purpose": "Isi dan input; measure 66ch." },
+      "heddle": { "displayName": "Heddle", "purpose": "Tautan navigasi di sisir." },
+      "label": { "displayName": "Label", "purpose": "Label horizontal kecil kapital; Bricolage dipadatkan wdth 75, bukan mono." },
+      "selvedge": { "displayName": "Selvedge", "purpose": "Teks vertikal di tepi kiri-kanan baris: nomor, jenis, peran, kota, tahun." },
+      "num": { "displayName": "Num", "purpose": "Angka terhitung saja: nomor lemparan, tahun, hitungan lembar. Azeret Mono tabular emas." }
+    },
+    "shadows": [
+      { "name": "field-focus-benang", "value": "0 1px 0 0 var(--mengkudu-terang)", "purpose": "Menebalkan garis bawah field fokus menjadi benang 2px. Satu-satunya box-shadow di sistem; bukan pengangkat." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Satu-satunya easing; semua transform dan warna." },
+      { "name": "dur", "value": "700ms", "purpose": "Durasi lemparan pakan masuk (transform); opacity 0.7x durasi, linear." },
+      { "name": "geser", "value": "translateX(-6vw) / translateX(6vw)", "purpose": "Offset awal isi baris sebelum ditenun, sesuai data-side." },
+      { "name": "warna", "value": "160ms", "purpose": "Perubahan warna teks dan garis bawah tautan, border field." },
+      { "name": "tombol", "value": "180ms", "purpose": "Latar dan transform heddle-merah; active translateY(1px)." },
+      { "name": "label-teropong", "value": "240ms", "purpose": "Fade label seksi di ujung benang teropong." },
+      { "name": "garis-nav", "value": "260ms", "purpose": "scaleX garis bawah 2px heddle dari kiri." },
+      { "name": "ujung-benang", "value": "500ms", "purpose": "Benang ujung memendek ke scaleX(0.94) saat hover." },
+      { "name": "reduced-motion", "value": "opacity 300ms linear", "purpose": "Pengganti geser saat prefers-reduced-motion; transisi garis nav dan ujung benang dimatikan." }
+    ],
+    "breakpoints": [
+      { "name": "sisir-rapat", "value": "420px" },
+      { "name": "kolom-tunggal", "value": "560px" },
+      { "name": "teropong-label", "value": "720px" },
+      { "name": "loom", "value": "860px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Heddle Merah",
+      "kind": "button",
+      "refersTo": "heddle-merah",
+      "description": "Tombol aksi utama: balok merah mengkudu dengan panah 1.5px; hover menerang ke #c93b33, active turun 1px.",
+      "html": "<a class=\"ds-heddle-merah\" href=\"#\">Kirim pesan<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M3 12h17M14 5l7 7-7 7\"/></svg></a>",
+      "css": ".ds-heddle-merah { display: inline-flex; align-items: center; gap: 0.7em; padding: 0.85em 1.5em; background: var(--mengkudu, #b5302a); color: var(--katun, #ece4d2); font-family: var(--font-bricolage), 'Bricolage Grotesque', system-ui, sans-serif; font-size: 1.0625rem; font-weight: 600; letter-spacing: 0.005em; line-height: 1; text-decoration: none; border: 0; border-radius: 0; cursor: pointer; transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1), transform 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-heddle-merah svg { width: 1em; height: 1em; flex: none; } .ds-heddle-merah:hover { background: #c93b33; } .ds-heddle-merah:active { transform: translateY(1px); } .ds-heddle-merah:focus-visible { outline: 2px solid var(--mengkudu-terang, #e8695f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Ikon Tombol",
+      "kind": "button",
+      "refersTo": "ikon-tombol",
+      "description": "Kotak 2.75rem berbingkai benang katun 30% untuk kontrol penampil; varian merah untuk tutup.",
+      "html": "<span style=\"display:inline-flex;gap:0.5rem\"><button class=\"ds-ikon-tombol\" aria-label=\"Sebelumnya\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M15 5l-7 7 7 7\"/></svg></button><button class=\"ds-ikon-tombol ds-merah\" aria-label=\"Tutup\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M6 6l12 12M18 6L6 18\"/></svg></button></span>",
+      "css": ".ds-ikon-tombol { display: inline-grid; place-items: center; width: 2.75rem; height: 2.75rem; background: none; border: 1px solid var(--katun-30, rgba(236,228,210,0.3)); border-radius: 0; color: var(--katun, #ece4d2); cursor: pointer; padding: 0; transition: border-color 160ms cubic-bezier(0.16, 1, 0.3, 1), background-color 160ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-ikon-tombol svg { width: 1.1rem; height: 1.1rem; } .ds-ikon-tombol:hover { border-color: var(--katun, #ece4d2); } .ds-ikon-tombol.ds-merah { border-color: var(--mengkudu, #b5302a); background: var(--mengkudu, #b5302a); } .ds-ikon-tombol.ds-merah:hover { background: #c93b33; border-color: #c93b33; } .ds-ikon-tombol:focus-visible { outline: 2px solid var(--mengkudu-terang, #e8695f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Benang Link",
+      "kind": "custom",
+      "refersTo": "benang-link",
+      "description": "Tautan aksi dalam teks: merah terang dengan garis bawah 1px mengkudu, offset 0.24em.",
+      "html": "<a class=\"ds-benang-link\" href=\"#\">Buka 6 lembar</a>",
+      "css": ".ds-benang-link { color: var(--mengkudu-terang, #e8695f); font-family: var(--font-bricolage), 'Bricolage Grotesque', system-ui, sans-serif; font-size: 0.95rem; text-decoration: underline; text-decoration-color: var(--mengkudu, #b5302a); text-decoration-thickness: 1px; text-underline-offset: 0.24em; transition: color 160ms cubic-bezier(0.16, 1, 0.3, 1), text-decoration-color 160ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-benang-link:hover { color: var(--mengkudu-hover, #f07d74); text-decoration-color: var(--mengkudu-hover, #f07d74); } .ds-benang-link:focus-visible { outline: 2px solid var(--mengkudu-terang, #e8695f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Ujung Benang",
+      "kind": "custom",
+      "refersTo": "ujung-benang",
+      "description": "Tautan aksi yang benangnya memanjang ke tepi kanan; hover memendekkan benang ke 94%.",
+      "html": "<a class=\"ds-ujung-benang\" href=\"#\" style=\"width:20rem\">Kirim pesan</a>",
+      "css": ".ds-ujung-benang { display: flex; align-items: center; gap: 1.25rem; color: var(--mengkudu-terang, #e8695f); font-family: var(--font-bricolage), 'Bricolage Grotesque', system-ui, sans-serif; font-size: 1.0625rem; font-weight: 600; text-decoration: none; transition: color 160ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-ujung-benang::after { content: ''; flex: 1; height: 1px; background: var(--mengkudu, #b5302a); transform-origin: left; transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-ujung-benang:hover { color: var(--mengkudu-hover, #f07d74); } .ds-ujung-benang:hover::after { transform: scaleX(0.94); } .ds-ujung-benang:focus-visible { outline: 2px solid var(--mengkudu-terang, #e8695f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Field",
+      "kind": "input",
+      "refersTo": "field-input",
+      "description": "Input tanpa kotak: hanya garis bawah katun 30% yang menjadi benang merah 2px saat fokus.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-nama\">Nama</label><input id=\"ds-nama\" type=\"text\" placeholder=\"Nama kamu\" /></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 0.4rem; font-family: var(--font-bricolage), 'Bricolage Grotesque', system-ui, sans-serif; } .ds-field label { font-size: 0.85rem; color: var(--redup, #a8b0cc); } .ds-field input { width: 100%; background: transparent; color: var(--katun, #ece4d2); border: 0; border-bottom: 1px solid var(--katun-30, rgba(236,228,210,0.3)); border-radius: 0; padding: 0.6rem 0; font: inherit; font-size: 1.0625rem; line-height: 1.4; caret-color: var(--mengkudu-terang, #e8695f); transition: border-color 160ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-field input::placeholder { color: var(--redup, #a8b0cc); opacity: 1; } .ds-field input:focus { outline: none; border-bottom-color: var(--mengkudu-terang, #e8695f); box-shadow: 0 1px 0 0 var(--mengkudu-terang, #e8695f); } .ds-field input:user-invalid { border-bottom-color: var(--mengkudu-terang, #e8695f); }"
+    },
+    {
+      "name": "Sisir",
+      "kind": "nav",
+      "refersTo": "sisir",
+      "description": "Header sticky 3.5rem sebagai sisir alat tenun: nama di kiri, heddle katun dengan garis merah 2px yang tumbuh dari kiri, Hubungi sebagai heddle merah, gigi 1px tiap 12px di bawahnya.",
+      "html": "<header class=\"ds-sisir\"><div class=\"ds-sisir-inner\"><a class=\"ds-sisir-nama\" href=\"#\">Salsabila</a><nav class=\"ds-sisir-nav\"><a class=\"ds-heddle\" href=\"#\" aria-current=\"page\">Karya</a><a class=\"ds-heddle\" href=\"#\">Tentang</a><a class=\"ds-heddle\" href=\"#\">Sertifikat</a><a class=\"ds-heddle-nav\" href=\"#\">Hubungi</a></nav></div></header>",
+      "css": ".ds-sisir { position: relative; height: 3.5rem; background-color: var(--nila, #1c2541); background-image: repeating-linear-gradient(90deg, rgba(236,228,210,0.045) 0 1px, transparent 1px 3px); color: var(--katun, #ece4d2); font-family: var(--font-bricolage), 'Bricolage Grotesque', system-ui, sans-serif; margin-bottom: 7px; } .ds-sisir::before { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: rgba(236,228,210,0.3); } .ds-sisir::after { content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 7px; background: repeating-linear-gradient(90deg, rgba(236,228,210,0.3) 0 1px, transparent 1px 12px); pointer-events: none; } .ds-sisir-inner { height: 100%; padding-inline: clamp(1.25rem, 4.5vw, 4.5rem); display: flex; align-items: center; justify-content: space-between; gap: 1rem; } .ds-sisir-nama { font-weight: 650; letter-spacing: -0.01em; font-variation-settings: 'opsz' 24, 'wdth' 100; color: inherit; text-decoration: none; white-space: nowrap; } .ds-sisir-nav { display: flex; align-items: center; gap: clamp(0.75rem, 2vw, 2rem); } .ds-heddle { position: relative; display: inline-flex; align-items: center; height: 3.5rem; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.01em; color: var(--katun, #ece4d2); text-decoration: none; white-space: nowrap; } .ds-heddle::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--mengkudu-terang, #e8695f); transform: scaleX(0); transform-origin: left; transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-heddle:hover::after, .ds-heddle[aria-current='page']::after { transform: scaleX(1); } .ds-heddle-nav { display: inline-flex; align-items: center; padding: 0.6em 1em; background: var(--mengkudu, #b5302a); color: var(--katun, #ece4d2); font-size: 0.875rem; font-weight: 600; line-height: 1; text-decoration: none; transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-heddle-nav:hover { background: #c93b33; } .ds-heddle:focus-visible, .ds-heddle-nav:focus-visible, .ds-sisir-nama:focus-visible { outline: 2px solid var(--mengkudu-terang, #e8695f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Selvedge",
+      "kind": "chip",
+      "refersTo": "selvedge-teks",
+      "description": "Label vertikal di tepi baris: nomor lemparan mono emas, lalu jenis dan peran dalam Bricolage condensed kapital redup.",
+      "html": "<div class=\"ds-selvedge\"><span class=\"ds-selvedge-teks\"><span class=\"ds-emas\">01/08</span> · Koleksi busana · Riset · Motif</span></div>",
+      "css": ".ds-selvedge { display: flex; justify-content: center; width: clamp(2.25rem, 4vw, 3.5rem); height: 18rem; padding-block: 0.5rem; } .ds-selvedge-teks { writing-mode: vertical-rl; text-orientation: mixed; white-space: nowrap; font-family: var(--font-bricolage), 'Bricolage Grotesque', system-ui, sans-serif; font-variation-settings: 'opsz' 12, 'wdth' 75; font-weight: 500; font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--redup, #a8b0cc); } .ds-selvedge-teks .ds-emas { color: var(--emas, #c9a14a); font-family: var(--font-azeret), 'Azeret Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; font-variation-settings: normal; letter-spacing: 0.1em; }"
+    },
+    {
+      "name": "Pakan",
+      "kind": "card",
+      "refersTo": "pakan",
+      "description": "Satu lemparan pakan: baris konten full-bleed di grid loom dengan benang 1px katun 12% di ujung atas, gambar telanjang merangkak ke selvedge, teks bersusun di sisi lain. Tidak ada kartu.",
+      "html": "<article class=\"ds-pakan\"><div class=\"ds-pakan-isi\"><a class=\"ds-pakan-link\" href=\"#\"><span class=\"ds-pakan-gambar\"><span class=\"ds-pakan-pelat\" role=\"img\" aria-label=\"Lembar motif\"></span></span><span class=\"ds-pakan-teks\"><span class=\"ds-pakan-judul\">Srikandi</span><span class=\"ds-pakan-sub\">Koleksi busana, 2024</span><span class=\"ds-pakan-ringkas\">Wayang kulit diturunkan ke motif dan lembar teknis.</span><span class=\"ds-pakan-lihat\">Buka 6 lembar</span></span></a></div><div class=\"ds-pakan-selvedge\"><span class=\"ds-pakan-selvedge-teks\"><span class=\"ds-emas\">01/08</span> · Koleksi busana</span></div></article>",
+      "css": ".ds-pakan { position: relative; display: grid; grid-template-columns: clamp(2.25rem, 4vw, 3.5rem) minmax(0, 1fr) clamp(2.25rem, 4vw, 3.5rem); padding-block: clamp(2rem, 5vw, 4.5rem); background-color: var(--nila, #1c2541); background-image: repeating-linear-gradient(90deg, rgba(236,228,210,0.045) 0 1px, transparent 1px 3px); color: var(--katun, #ece4d2); font-family: var(--font-bricolage), 'Bricolage Grotesque', system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.55; } .ds-pakan::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: rgba(236,228,210,0.12); } .ds-pakan-isi { grid-column: 2; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 2.5rem); align-items: end; } .ds-pakan-link { display: contents; color: inherit; text-decoration: none; } .ds-pakan-gambar { grid-column: 1 / span 8; margin-left: calc(-1 * clamp(2.25rem, 4vw, 3.5rem)); } .ds-pakan-pelat { display: block; aspect-ratio: 3 / 2; background: #f4efe4; } .ds-pakan-teks { grid-column: 9 / span 4; display: flex; flex-direction: column; gap: 0.6rem; padding-bottom: 0.25rem; } .ds-pakan-judul { font-size: clamp(1.5rem, 2.6vw, 2.5rem); line-height: 1.05; font-weight: 600; letter-spacing: -0.015em; font-variation-settings: 'opsz' 48, 'wdth' 100; transition: color 160ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-pakan-link:hover .ds-pakan-judul { color: var(--mengkudu-hover, #f07d74); } .ds-pakan-sub { color: var(--redup, #a8b0cc); font-size: 1rem; } .ds-pakan-ringkas { margin-top: 0.4rem; } .ds-pakan-lihat { margin-top: 0.75rem; font-size: 0.95rem; color: var(--mengkudu-terang, #e8695f); text-decoration: underline; text-decoration-color: var(--mengkudu, #b5302a); text-decoration-thickness: 1px; text-underline-offset: 0.24em; } .ds-pakan-selvedge { grid-column: 3; grid-row: 1; display: flex; justify-content: center; align-items: flex-start; padding-block: 0.5rem; } .ds-pakan-selvedge-teks { writing-mode: vertical-rl; white-space: nowrap; font-variation-settings: 'opsz' 12, 'wdth' 75; font-weight: 500; font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--redup, #a8b0cc); } .ds-pakan-selvedge-teks .ds-emas { color: var(--emas, #c9a14a); font-family: var(--font-azeret), 'Azeret Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; font-variation-settings: normal; letter-spacing: 0.1em; } @media (max-width: 860px) { .ds-pakan-isi { grid-template-columns: 1fr; gap: 1.25rem; } .ds-pakan-gambar { grid-column: 1; margin-inline: calc(-1 * clamp(2.25rem, 4vw, 3.5rem)); } .ds-pakan-teks { grid-column: 1; } }"
+    },
+    {
+      "name": "Teropong",
+      "kind": "custom",
+      "refersTo": "num",
+      "description": "Benang merah 2px di tepi kiri viewport yang memanjang mengikuti gulir; label seksi vertikal menaiki ujungnya.",
+      "html": "<div class=\"ds-teropong\" aria-hidden=\"true\"><span class=\"ds-teropong-benang\"></span><span class=\"ds-teropong-label ds-is-visible\">Karya</span></div>",
+      "css": ".ds-teropong { position: relative; width: 2px; height: 14rem; } .ds-teropong-benang { display: block; width: 100%; height: 45%; background: var(--mengkudu-terang, #e8695f); } .ds-teropong-label { position: absolute; left: 0.5rem; top: 45%; transform: translateY(-100%); writing-mode: vertical-rl; text-orientation: mixed; font-family: var(--font-bricolage), 'Bricolage Grotesque', system-ui, sans-serif; font-variation-settings: 'opsz' 12, 'wdth' 75; font-weight: 500; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mengkudu-terang, #e8695f); white-space: nowrap; opacity: 0; transition: opacity 240ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-teropong-label.ds-is-visible { opacity: 1; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Kain yang Sedang Ditenun di ATBM",
+    "overview": "Seluruh halaman adalah satu helai kain di alat tenun bukan mesin. Latar nila (`nila`) dengan tekstur lusi vertikal pitch 3px berkontras sangat rendah adalah benang lungsi yang terentang; setiap baris konten adalah satu lemparan benang pakan yang melintas penuh dari tepi ke tepi. Tidak ada kartu, kotak, bayangan, atau radius: batas antar-baris hanya satu benang 1px, gambar duduk telanjang di atas nila, dan lembar pindaian putih terbaca sebagai kertas pola di atas kain. Antarmuka mundur; karya memimpin dari viewport pertama.\n\nKepadatan sistem sengaja renggang dan berirama: satu lemparan per baris, sisi kiri dan kanan bergantian, dengan label selvedge vertikal di kedua tepi membawa nomor lemparan, jenis, dan peran. Satu benang merah mengkudu bertugas tunggal sebagai \"teropong\": penanda gulir di tepi kiri viewport, state aktif navigasi, tautan aksi, dan garis potong kain di footer. Benang emas dipesan khusus untuk angka yang dihitung. Dunia ini menolak susunan portofolio default: nama serif di kertas krem di atas grid kartu seukuran, dan kebalikannya, grid brutalis gelap dengan marquee.\n\nYang tercatat di sini adalah hasil bangunan yang dikirim, bukan rencana. Di mana kontrak arah dan kode berbeda, kode yang berlaku; perbedaan dicatat di bagian yang bersangkutan.",
+    "keyCharacteristics": [
+      "Ground nila penuh halaman dengan tekstur lusi 3px (`lusi-warna`, sekitar 4,5% katun), bukan panel; sisir, penampil, dan body memakai gradien yang sama.",
+      "Satu keluarga huruf, Bricolage Grotesque, dengan sumbu `opsz` dan `wdth` yang mengerjakan seluruh hierarki; Azeret Mono hanya untuk angka terhitung.",
+      "Baris pakan full-bleed bergantian sisi; lebar baris menyandikan bobot karya (`data-bobot=\"lebar\" | \"sempit\"`).",
+      "Garis hanya 1px benang: ujung lemparan `katun-12`, tepi pita dan gigi sisir `katun-30`, potong kain `mengkudu-terang`.",
+      "Ikon digambar dengan satu bobot garis 1,5px, ujung persegi, sambungan siku (`stroke-linecap: square; stroke-linejoin: miter`).",
+      "Kaitan browser ikut ditenun: seleksi katun di atas nila, focus ring merah 2px offset 3px, scrollbar tipis katun, caret merah, `color-scheme: dark`."
+    ],
+    "rules": [
+      { "name": "The Satu Benang Merah Rule", "body": "Merah adalah satu benang yang menandai posisi dan aksi: teropong, nav aktif, tautan aksi, tombol utama, garis potong. Ia tidak dipakai sebagai dekorasi, latar seksi, atau warna gambar.", "section": "colors" },
+      { "name": "The Emas Terhitung Rule", "body": "Emas hanya untuk angka yang dihitung. Kata, judul, dan label tidak pernah emas; angka yang bukan hitungan (nomor telepon, kode pos) tidak memakainya.", "section": "colors" },
+      { "name": "The Merah Tidak Bicara Rule", "body": "`mengkudu` (#b5302a) tidak pernah menjadi warna teks; teks merah selalu `mengkudu-terang` (#e8695f). Mengkudu gelap hanya untuk isian dan benang 1-2px.", "section": "colors" },
+      { "name": "The Redup Bukan Abu Rule", "body": "Teks sekunder diwarnai dari nila yang dicerahkan (`redup`), bukan katun dengan opasitas dan bukan abu. Opasitas katun (`katun-30`, `katun-12`) hanya untuk benang dan garis, bukan teks.", "section": "colors" },
+      { "name": "The Satu Keluarga Rule", "body": "Display, isi, dan label semua Bricolage Grotesque; hierarki dibentuk oleh `opsz`, `wdth`, bobot, dan tracking, bukan oleh pergantian keluarga. Label kecil dipadatkan ke `wdth 75`, tidak pernah diganti mono.", "section": "typography" },
+      { "name": "The Mono Hanya Menghitung Rule", "body": "Azeret Mono muncul hanya pada `.num` dan `.selvedge-teks .emas`, selalu `tabular-nums`, selalu emas. Mono untuk kata adalah pelanggaran.", "section": "typography" },
+      { "name": "The Rapat di Atas, Longgar di Bawah Rule", "body": "Tracking negatif bertambah seiring ukuran (-0.01em pada 1.75rem sampai -0.03em pada nama); tracking positif hanya pada kapital kecil (0.1em sampai 0.12em). Teks isi tidak ditracking.", "section": "typography" },
+      { "name": "The Tanpa Bayangan Rule", "body": "Tidak ada `box-shadow` atau `drop-shadow` untuk mengangkat permukaan. Pemisahan antar-elemen adalah benang 1px atau ruang kosong. Hover mengubah warna benang atau menggeser 1px (`translateY(1px)` saat tombol ditekan), bukan menambah bayangan.", "section": "elevation" },
+      { "name": "The Kain Satu Lapis Rule", "body": "Sisir, penampil, dan body membawa latar nila dan tekstur lusi yang identik. Tidak ada permukaan yang lebih terang atau lebih gelap dari kain untuk menandai \"panel\".", "section": "elevation" }
+    ],
+    "dos": [
+      "Do letakkan setiap konten baru sebagai satu baris pakan di grid loom (`selvedge | 1fr | selvedge`) dengan benang 1px `katun-12` di tepi atas dan label selvedge vertikal yang membawa metadatanya.",
+      "Do ganti sisi asal geseran per indeks (genap kiri, ganjil kanan) dan pakai `Weft` untuk masuknya, sehingga `is-woven`, `js`, dan reduced-motion tetap satu jalur.",
+      "Do biarkan gambar merangkak ke selvedge (`margin: calc(-1 * var(--selvedge))`) dan duduk telanjang di atas nila; lembar putih adalah kertas pola, bukan kartu.",
+      "Do pilih warna teks hanya dari `katun`, `redup`, `mengkudu-terang`, dan `emas` (masing-masing 12,1 / 6,6 / 4,9 / 5,9 : 1 di atas nila).",
+      "Do bentuk hierarki lewat `font-variation-settings` (`opsz` 12/14/20/24/28/48/96, `wdth` 75/100) dan bobot 450–760 Bricolage, dengan tracking negatif yang mengecil bersama ukuran.",
+      "Do gunakan `var(--ease-out)` (`cubic-bezier(0.16, 1, 0.3, 1)`) untuk semua transisi: 160ms warna, 180ms tombol, 240ms label, 260ms garis nav, 500ms benang ujung, 700ms (`--dur`) lemparan; opacity selalu linear.",
+      "Do gambar ikon baru pada grid 24 dengan stroke 1,5px, `linecap: square`, `linejoin: miter`, `currentColor`, dan `aria-hidden`.",
+      "Do tulis angka yang dihitung dengan `.num` (Azeret Mono, tabular, emas) dan padankan dua digit (`01`, `08`)."
+    ],
+    "donts": [
+      "Don't tambahkan kartu, kotak berlatar, border samping, radius, atau `box-shadow` pengangkat; pemisah hanya benang 1px atau ruang.",
+      "Don't pakai `mengkudu` (#b5302a) sebagai warna teks, dan jangan pakai merah untuk latar seksi, ornamen, atau lebih dari satu aksi utama per baris.",
+      "Don't warnai kata, judul, atau label dengan `emas`; emas hanya untuk hitungan.",
+      "Don't pakai Azeret Mono untuk label, kicker, atau kata apa pun; label kecil adalah Bricolage `wdth 75` kapital.",
+      "Don't buat teks sekunder dari katun beropasitas atau abu netral; pakai `redup`.",
+      "Don't ganti tekstur lusi dengan latar polos, gradien warna, gambar latar, atau blur; nila bertekstur 3px adalah kain yang sama di body, sisir, dan penampil.",
+      "Don't pakai `overflow-x: hidden` pada body atau baris; `clip` dipakai agar geseran dan gambar meluber tidak membuat kontainer gulir baru.",
+      "Don't naikkan ukuran display lain ke skala nama (11rem); tangga display umum berhenti di `display-l` 4.5rem."
+    ]
+  }
+}

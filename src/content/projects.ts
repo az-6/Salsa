@@ -81,8 +81,10 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "sunlit-minimalism",
-    title: "Sunlit Minimalism",
+    // TODO: periksa — nama ini pilihan sementara dari kipas lipat dan payung
+    // pantai di papan suasananya. Ganti kalau koleksinya punya nama sendiri.
+    slug: "kipas-pesisir",
+    title: "Kipas Pesisir",
     subtitle: "Koleksi resor biru dan kuning",
     kind: "Koleksi busana",
     year: "2024",
@@ -110,8 +112,58 @@ export const projects: Project[] = [
         file: "2.png",
         alt: "Tiga gaun berkorset dengan motif sulur, kisi, dan kotak biru kuning, dipadu rok draperi biru dan bot selutut",
       },
-      { file: "3.png", alt: "Ilustrasi busana koleksi Sunlit Minimalism" },
-      { file: "4.png", alt: "Ilustrasi busana koleksi Sunlit Minimalism" },
+      {
+        file: "3.png",
+        alt: "Tiga gaun tanpa tali dengan korset bermotif ranting, bunga, dan wajik biru kuning, rok draperi berlapis biru, hijau muda, dan kuning",
+      },
+      {
+        file: "4.png",
+        alt: "Tiga setelan dengan luaran sifon transparan berlengan lebar, korset bermotif di pinggang, dan rok asimetris kuning dan biru",
+      },
+    ],
+  },
+  {
+    slug: "sunlit-minimalism",
+    title: "Sunlit Minimalism",
+    subtitle: "Koleksi busana perempuan bernuansa pagi",
+    kind: "Koleksi busana",
+    year: "2026",
+    role: "Konsep, palet, bahan, ilustrasi, gambar teknis",
+    summary:
+      "Gaya minimal alami dan kehangatan yang tenang: linen, rajut ringan, dan kuning matahari pagi di atas Cloud Dancer.",
+    body: [
+      "Konsepnya berangkat dari suasana matahari pagi yang lembut: cahaya yang menegaskan siluet bersih, bukan pernyataan yang keras. Fokusnya kejernihan, keseimbangan, dan feminitas modern yang tidak dipaksakan.",
+      "Paletnya menempatkan Cloud Dancer, warna tahun 2026, sebagai jembatan antara cahaya dan bahan. Kuning hangat seperti Warm Vanilla, Butter Yellow, dan Sunshine dipakai sebagai aksen yang ditahan; hijau sage dan olive menjadi penyeimbang alaminya.",
+      "Bahannya serat alam: linen bertekstur, katun ringan, dan rajut katun. Pola garis dan kotak-kotak dijaga bernada lembut; ritsleting tersembunyi menjaga konstruksinya tetap tenang. Lima tampilan dirancang, dan tampilan pertama diturunkan ke gambar teknis depan dan belakang.",
+    ],
+    dir: "sunlit minimalism",
+    cover: "04 lima tampilan.png",
+    shots: [
+      {
+        file: "01 konsep dan papan suasana.png",
+        alt: "Papan konsep Sunlit Minimalism: judul, uraian konsep, foto perempuan bergaun rajut krem di depan tirai bermandi cahaya, bunga peoni dan lili kuning, serta kain putih berlipat",
+        caption: "Konsep dan papan suasana",
+      },
+      {
+        file: "02 palet warna.png",
+        alt: "Dua belas contoh warna Pantone dari Meringue dan Cloud Dancer sampai Sunshine, Warm Sand, dan Sage Green, dengan penjelasan aksen hangat dan penyeimbang alami",
+        caption: "Palet warna",
+      },
+      {
+        file: "03 bahan dan detail.png",
+        alt: "Contoh bahan: linen coklat dan krem, rajut kabel putih, katun ringan hijau sage, pola garis kuning, pola kotak linen, dan ritsleting tersembunyi kuning",
+        caption: "Bahan dan detail",
+      },
+      {
+        file: "04 lima tampilan.png",
+        alt: "Lima tampilan berjajar: jaket crop krem dengan rok lipit sage, gaun halter kuning transparan, gaun garis kuning dengan celana linen, atasan sage berok mengembang dengan celana krem, dan gaun rajut krem berkerah tinggi",
+        caption: "Lima tampilan",
+      },
+      {
+        file: "05 look 1 gambar teknis.png",
+        alt: "Tampilan pertama: ilustrasi jaket crop krem dan gaun sage, di sampingnya gambar teknis depan dan belakang untuk jaket dan gaun",
+        caption: "Tampilan satu: gambar teknis",
+      },
     ],
   },
   {

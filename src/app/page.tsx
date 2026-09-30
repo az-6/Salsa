@@ -1,89 +1,108 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import ProjectRow from "@/components/ProjectRow";
+import { IkonPanahKanan } from "@/components/Ikon";
+import WeftRow from "@/components/WeftRow";
 import { projects } from "@/content/projects";
 import { site } from "@/content/site";
 import { getImage } from "@/lib/images";
 
-export default function Home() {
-  // Croquis Srikandi dipakai sebagai pembuka karena ia memuat seluruh isi
-  // portofolio ini sekaligus: siluet busana, motif tradisional, dan bordir.
-  const hero = getImage("fashion illustration", "desain 1.png");
+/** Pita yang melintas di antara dua baris nama: tiga tampilan koleksi Srikandi. */
+const PITA = { dir: "fashion illustration", file: "14.png" } as const;
+
+const tahunAwal = Math.min(...projects.map((p) => Number(p.year)));
+const tahunAkhir = Math.max(...projects.map((p) => Number(p.year)));
+
+export default function HomePage() {
+  const pita = getImage(PITA.dir, PITA.file);
+  const pitaAlt =
+    projects
+      .find((p) => p.dir === PITA.dir)
+      ?.shots.find((shot) => shot.file === PITA.file)?.alt ??
+    "Tiga tampilan koleksi Srikandi";
+
+  const [nama, ...sisa] = site.name.split(" ");
+  const namaKedua = sisa.join(" ");
 
   return (
     <>
-      <section className="hero">
-        <div className="shell hero-inner">
-          <div className="hero-words">
-            <h1 className="display display-xl hero-name">{site.name}</h1>
-            <p className="hero-role">
-              <span>{site.role}</span>
-              <span className="hero-place">{site.location}</span>
-            </p>
-            <p className="lede hero-lede">{site.bio[0]}</p>
+      <section className="tenun" data-bagian="Tenunan" aria-labelledby="nama">
+        <div className="selvedge">
+          <span className="selvedge-teks">{site.role}</span>
+        </div>
+
+        <div className="tenun-jalin">
+          <h1 id="nama" className="tenun-nama">
+            <span>{nama}</span>
+            <span>{namaKedua}</span>
+          </h1>
+
+          <div className="tenun-pita">
+            <Image
+              src={pita.src}
+              alt={pitaAlt}
+              width={pita.width}
+              height={pita.height}
+              placeholder="blur"
+              blurDataURL={pita.blurDataURL}
+              sizes="100vw"
+              priority
+            />
           </div>
 
-          <figure className="hero-figure">
-            <Image
-              src={hero.src}
-              alt="Gaun putih tanpa lengan berpotongan asimetris dengan wayang Srikandi bersulam di sisi kiri badan"
-              width={hero.width}
-              height={hero.height}
-              placeholder="blur"
-              blurDataURL={hero.blurDataURL}
-              priority
-              sizes="(max-width: 860px) 88vw, 40vw"
-            />
-            <figcaption className="hero-callout callout callout-mark">
-              Wayang Srikandi, bordir pada kain mori
-            </figcaption>
-          </figure>
+          <div className="tenun-nama is-over" aria-hidden="true">
+            <span>{nama}</span>
+            <span>{namaKedua}</span>
+          </div>
+        </div>
+
+        <div className="tenun-bawah">
+          <p className="tenun-peran">
+            <strong>{site.role}</strong> yang berangkat dari wayang kulit, batik pesisir, dan
+            ragam hias Nusantara, lalu menurunkannya sampai lembar teknis siap produksi.
+            Berbasis di {site.location}.
+          </p>
+          <Link href="/kontak" className="ujung-benang">
+            Kirim pesan
+          </Link>
+        </div>
+
+        <div className="selvedge selvedge-kanan">
+          <span className="selvedge-teks emas">
+            {site.location.split(",")[0]} · {tahunAwal}–{tahunAkhir}
+          </span>
         </div>
       </section>
 
-      <hr className="rule" />
-
-      <section className="section" id="karya">
-        <div className="shell">
-          <h2 className="display display-l work-heading">Karya</h2>
-          <p className="lede work-intro">
-            Delapan proyek, dari riset motif sampai lembar yang dikirim ke penjahit.
-          </p>
+      <section id="karya" data-bagian="Karya" aria-labelledby="judul-karya">
+        <div className="karya-kepala">
+          <h2 id="judul-karya" className="display-l">
+            Karya
+          </h2>
+          <span className="num">{String(projects.length).padStart(2, "0")} lemparan</span>
         </div>
 
-        <div className="shell work-list">
+        <div>
           {projects.map((project, index) => (
-            <ProjectRow key={project.slug} project={project} index={index} />
+            <WeftRow
+              key={project.slug}
+              project={project}
+              index={index}
+              total={projects.length}
+            />
           ))}
         </div>
       </section>
 
-      <hr className="rule" />
-
-      <section className="section">
-        <div className="shell about-teaser">
-          <div className="prose">
-            <h2 className="display display-l about-teaser-heading">
-              Cara saya bekerja
-            </h2>
-            {site.bio.slice(1).map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-            <p className="about-teaser-action">
-              <Link href="/tentang" className="link-underline tap">
-                Selengkapnya tentang saya
-              </Link>
-            </p>
+      <section className="catatan loom" data-bagian="Tentang" aria-label="Tentang saya">
+        <div className="catatan-isi">
+          <p className="catatan-teks">{site.bio[0]}</p>
+          <div className="catatan-tautan">
+            <Link href="/tentang" className="heddle-merah">
+              Tentang saya
+              <IkonPanahKanan />
+            </Link>
           </div>
-
-          <ul className="skill-list">
-            {site.skills.map((skill) => (
-              <li key={skill} className="callout">
-                {skill}
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
     </>

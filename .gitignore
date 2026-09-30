@@ -45,3 +45,9 @@ next-env.d.ts
 
 # tinjauan visual saat pengembangan
 /.screenshots
+
+# tangkapan layar tinjauan Impeccable (dibuat ulang tiap sesi)
+/.impeccable/review
+/.impeccable/mocks
+/.impeccable/hook.cache.json
+/.impeccable/questions

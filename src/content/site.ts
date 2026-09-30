@@ -14,14 +14,14 @@ export const site = {
   /** TODO: ganti — kota tempat kamu berbasis sekarang. */
   location: "Bandung, Indonesia",
 
-  /** TODO: ganti — alamat email yang kamu pakai untuk pekerjaan. */
-  email: "halo@contoh.com",
+  /** Alamat email untuk pekerjaan. */
+  email: "salsabila0473@gmail.com",
 
-  /** TODO: ganti — username Instagram, tanpa tanda @. */
-  instagram: "username",
+  /** Username Instagram, tanpa tanda @. */
+  instagram: "azzhrlaa",
 
-  /** TODO: ganti — nomor WhatsApp, format internasional tanpa + atau spasi. */
-  whatsapp: "6281234567890",
+  /** Nomor WhatsApp, format internasional tanpa + atau spasi (+62 895-3904-49302). */
+  whatsapp: "62895390449302",
 
   /**
    * TODO: periksa & sunting — draf ini disusun dari karya di folder works/.
@@ -33,6 +33,13 @@ export const site = {
     "Sebagian proyek bersifat komersial, seperti seragam korporat untuk lingkungan perbankan dan farmasi, di mana identitas perusahaan harus ditampung tanpa mengorbankan kenyamanan pemakainya.",
   ],
 
+  /**
+   * TODO: periksa — janji waktu balas yang tampil di halaman Kontak dan footer.
+   * Ini komitmen layanan; kosongkan ("") kalau tidak ingin berjanji, dan
+   * kalimatnya tidak akan ditampilkan.
+   */
+  replyNote: "Saya biasanya membalas dalam dua hari kerja.",
+
   /** Ditampilkan di halaman Tentang. */
   skills: [
     "Ilustrasi mode & croquis",
@@ -43,24 +50,25 @@ export const site = {
     "Adobe Illustrator & Photoshop",
   ],
 
-  /** TODO: periksa tahun & jurusan. */
+  /** TODO: periksa tahun. */
   education: [
     {
       period: "2021 — 2025",
-      title: "S1 Desain Fesyen",
+      title: "S1 Kriya Tekstil Fashion",
       org: "Universitas Muhammadiyah Bandung",
     },
   ],
 
-  /** TODO: ganti file di public/profil.jpg dengan fotomu (potret, min. 800px). */
-  portrait: "/profil.jpg",
-
   /**
-   * TODO: ganti — alamat website setelah tayang. Dipakai untuk tautan mutlak
-   * pada pratinjau media sosial dan sitemap. Saat deploy di Vercel, isi lewat
-   * variabel lingkungan NEXT_PUBLIC_SITE_URL dan nilai ini terpakai otomatis.
+   * Alamat website, dipakai untuk tautan mutlak pada pratinjau media sosial
+   * dan sitemap. Diambil otomatis: NEXT_PUBLIC_SITE_URL kalau diisi, lalu
+   * domain produksi Vercel, lalu localhost saat pengembangan.
    */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://salsabila-azzahra.example",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "http://localhost:3000"),
 } as const;
 
 export const whatsappUrl = `https://wa.me/${site.whatsapp}`;

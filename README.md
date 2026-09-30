@@ -11,7 +11,8 @@ Cari komentar `TODO: ganti` di dua berkas ini. Hanya dua berkas ini yang perlu
 disentuh untuk memperbarui isi website.
 
 **`src/content/site.ts`** — data diri
-- `email`, `instagram`, `whatsapp`, `location` — sekarang masih contoh
+- `location` — periksa kota tempat kamu berbasis
+- `replyNote` — janji waktu balas; kosongkan kalau tidak ingin berjanji
 - `bio` — tiga paragraf draf, tulis ulang dengan suaramu sendiri
 - `education` — periksa tahun dan nama jurusan
 
@@ -20,12 +21,9 @@ disentuh untuk memperbarui isi website.
 - `role` tiap proyek — periksa perannya benar
 - `body` — paragraf proses, disusun dari apa yang terlihat di gambar
 
-**`public/profil.jpg`** — timpa dengan fotomu. Potret tegak, minimal 800 px.
-Yang ada sekarang masih gambar penanda, bukan foto.
-
-**Alamat website** — setelah tayang, isi `NEXT_PUBLIC_SITE_URL` (di Vercel:
-Settings → Environment Variables) dengan alamat aslinya. Nilai itu dipakai
-`sitemap.xml`, `robots.txt`, dan pratinjau tautan di media sosial.
+**Alamat website** — diambil otomatis dari domain produksi Vercel. Kalau
+memakai domain sendiri, isi `NEXT_PUBLIC_SITE_URL` (di Vercel: Settings →
+Environment Variables) dengan alamat itu.
 
 ---
 
@@ -68,18 +66,21 @@ vercel deploy --prod   # tayang
 
 ```
 src/content/site.ts        data diri dan bio
-src/content/projects.ts    daftar 8 proyek + 3 sertifikat
+src/content/projects.ts    daftar 9 proyek + 3 sertifikat
 src/content/manifest.json  dihasilkan npm run assets — jangan disunting tangan
 src/app/globals.css        warna, tipografi, seluruh tata letak
 src/app/page.tsx           halaman depan
 src/app/karya/[slug]/      halaman tiap proyek
 src/app/sitemap.ts         daftar halaman untuk mesin pencari
 src/app/robots.ts          robots.txt
-src/components/            Header, Footer, Gallery, Lightbox, CertificateList,
-                           ProjectRow, ContactForm
+src/components/            Header (sisir), Teropong, Weft, WeftRow, Gallery,
+                           Lightbox, CertificateList, ContactForm, Footer, Ikon
+PRODUCT.md                 konteks produk: pengguna, tujuan, batasan
+DESIGN.md                  sistem desain: warna, huruf, komponen, gerak
 scripts/prepare-assets.mjs pengubah gambar mentah jadi turunan web
 scripts/shots.mjs          alat bantu: potret tiap halaman (npm run shots)
 scripts/check.mjs          alat bantu: uji lightbox, form, dan gambar (npm run check)
+scripts/viewport.mjs       alat bantu: potret viewport pertama + galat konsol
 ```
 
 Dua skrip terakhir hanya alat bantu saat menggarap tampilan; keduanya butuh
@@ -90,30 +91,24 @@ Chrome terpasang dan server sedang jalan. Atur lewat variabel lingkungan
 
 ## Catatan desain
 
-Palet warna tidak dipilih dari luar, melainkan diambil dari papan suasana
-koleksi Srikandi milik Salsabila sendiri (`works/fashion illustration/13.png`):
+Dunia visualnya **Lungsi & Pakan**: halaman diperlakukan sebagai kain yang
+sedang ditenun di alat tenun bukan mesin. Latar nila bertekstur benang lusi
+vertikal; setiap baris karya adalah satu lemparan benang pakan yang masuk dari
+kiri dan kanan bergantian; satu benang merah mengkudu (teropong) di tepi kiri
+layar menandai kemajuan gulir dan aksi utama; angka yang dihitung memakai emas.
+Nama di halaman depan terjalin menembus pita gambar koleksi Srikandi.
 
-| | |
-|---|---|
-| `#f8f7f2` | latar halaman |
-| `#313558` | nila — teks dan judul |
-| `#4f6c8a` | biru — teks sekunder |
-| `#8196a9` | biru pudar — garis bantu |
-| `#b85744` | merah bata — tinta keterangan |
+Token, kontras, huruf (Bricolage Grotesque dan Azeret Mono), komponen, dan
+aturan gerak dicatat lengkap di `DESIGN.md`. Konteks produk yang mendasari
+keputusan itu ada di `PRODUCT.md`.
 
-Garis keterangan bermata tipis di seluruh website (kelas `.callout`) meniru
-lembar spesifikasi Salsabila, tempat tiap detail jahitan ditarik keluar dengan
-garis dan diberi nama — dipakai menggantikan label huruf kapital.
+Merah `#b5302a` tidak pernah menjadi teks: kontrasnya di atas nila terlalu
+rendah. Ia hanya menggambar benang 1-2 px dan isian tombol. Teks merah memakai
+`#e8695f`; teks sekunder memakai nila yang dicerahkan `#a8b0cc`, bukan abu.
 
-`#8196a9` hanya menggambar garis, tidak pernah menjadi teks — kontrasnya 2,85:1
-di atas kertas, di bawah ambang keterbacaan. Teks redup memakai `#4f6c8a` atau
-`#5f6475`; aksen tautan memakai `#94412f`.
-
-Di layar di bawah 640 px gambar keluar sampai tepi layar (kelas `.bleed`),
-seperti lembar lookbook yang dicetak tanpa pinggiran. Kepala halaman menempel
-saat digulir dan memendekkan nama jadi satu baris supaya tingginya tetap 61 px.
-Croquis pembuka dikalikan ke kertas (`mix-blend-mode: multiply`) agar latar
-putihnya lenyap dan figurnya berdiri langsung di halaman.
+Gerak masuk baris (`Weft.tsx`) hanya hidup bila JS ada dan pengguna tidak
+meminta `prefers-reduced-motion`; tanpa keduanya semua konten terlihat sejak
+awal.
 
 Kontak memakai `mailto:`, tanpa server. Menekan kirim membuka aplikasi email
 pengunjung dengan isian sudah terisi. Kalau nanti butuh email benar-benar masuk

@@ -1,24 +1,24 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Bodoni_Moda } from "next/font/google";
+import { Azeret_Mono, Bricolage_Grotesque } from "next/font/google";
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Teropong from "@/components/Teropong";
 import { site } from "@/content/site";
 
 import "./globals.css";
 
-const bodoni = Bodoni_Moda({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-bodoni",
-  weight: ["400", "500"],
-  style: ["normal", "italic"],
+  variable: "--font-bricolage",
+  axes: ["opsz", "wdth"],
 });
 
-const archivo = Archivo({
+const azeret = Azeret_Mono({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-archivo",
+  variable: "--font-azeret",
   weight: ["400", "500"],
 });
 
@@ -42,22 +42,36 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  // Ponsel berponi: halaman boleh mengisi seluruh layar, dan tepinya dijaga
-  // lewat env(safe-area-inset-*) di globals.css.
   viewportFit: "cover",
-  themeColor: "#f8f7f2",
-  colorScheme: "light",
+  themeColor: "#1c2541",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="id" className={`${bodoni.variable} ${archivo.variable}`}>
+    <html
+      lang="id"
+      className={`${bricolage.variable} ${azeret.variable}`}
+      // Kelas `js` ditambahkan skrip di <head> sebelum hidrasi; React tidak
+      // perlu mencocokkannya.
+      suppressHydrationWarning
+    >
+      <head>
+        {/* Menandai bahwa JS hidup sebelum cat pertama, supaya baris pakan yang
+            belum ditenun tidak berkedip dari terlihat ke tersembunyi. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
+      </head>
       <body>
         <a href="#isi" className="skip-link">
           Lompat ke isi
         </a>
+        <Teropong />
         <Header />
         <main id="isi">{children}</main>
         <Footer />

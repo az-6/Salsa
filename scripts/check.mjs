@@ -39,12 +39,12 @@ const expect = (passed, label, detail) => {
   await page.setViewport({ width: 1440, height: 900 });
   await page.goto(`${BASE}/karya/srikandi`, { waitUntil: "networkidle0" });
 
-  await page.click(".gallery-button");
+  await page.click(".lembar-tombol");
   await new Promise((r) => setTimeout(r, 400));
   expect(await page.$eval("dialog.viewer", (d) => d.open), "terbuka saat diklik");
 
   const first = await page.$eval(".viewer-count", (el) => el.textContent.trim());
-  await page.click('button[aria-label="Gambar berikutnya"]');
+  await page.click('button[aria-label="Lembar berikutnya"]');
   await new Promise((r) => setTimeout(r, 300));
   const second = await page.$eval(".viewer-count", (el) => el.textContent.trim());
   expect(first !== second, `maju gambar (${first} -> ${second})`, first);
@@ -83,7 +83,7 @@ const expect = (passed, label, detail) => {
   await page.click('button[type="submit"]');
   await new Promise((r) => setTimeout(r, 600));
 
-  const status = await page.$eval(".contact-status", (el) => el.textContent.trim());
+  const status = await page.$eval(".formulir-status", (el) => el.textContent.trim());
   expect(errors.length === 0, "tidak ada galat JavaScript", errors.join("; "));
   expect(status.length > 0, `pesan cadangan muncul: "${status}"`);
 

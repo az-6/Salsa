@@ -10,46 +10,68 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="section">
-      <div className="shell contact-layout">
-        <div>
-          <h1 className="display display-l">Kontak</h1>
-          <p className="lede contact-intro">
-            Ceritakan apa yang sedang kamu kerjakan. Saya biasanya membalas dalam dua
-            hari kerja.
-          </p>
+    <section data-bagian="Kontak" aria-labelledby="judul-kontak">
+      <div className="garis-potong" aria-hidden="true" />
 
-          <ul className="contact-channels">
-            <li className="callout">
-              <a href={mailtoUrl} className="link-underline tap">
-                {site.email}
-              </a>
-            </li>
-            <li className="callout">
-              <a
-                href={instagramUrl}
-                className="link-underline tap"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Instagram @{site.instagram}
-              </a>
-            </li>
-            <li className="callout">
-              <a
-                href={whatsappUrl}
-                className="link-underline tap"
-                target="_blank"
-                rel="noreferrer"
-              >
-                WhatsApp
-              </a>
-            </li>
-            <li className="callout">{site.location}</li>
-          </ul>
+      <div className="kontak loom">
+        <div className="selvedge">
+          <span className="selvedge-teks">Potong kain di sini</span>
         </div>
 
-        <ContactForm />
+        <div className="kontak-isi">
+          <div className="kontak-kiri">
+            <h1 id="judul-kontak" className="display-l">
+              Kontak
+            </h1>
+            <p className="lede">
+              Ceritakan lowongan, magang, atau proyek yang sedang kamu kerjakan.
+              {site.replyNote ? ` ${site.replyNote}` : ""}
+            </p>
+
+            <ul className="saluran">
+              <li>
+                <span className="label">Email</span>
+                <a href={mailtoUrl} className="katun-link tap">
+                  {site.email}
+                </a>
+              </li>
+              <li>
+                <span className="label">Instagram</span>
+                <a
+                  href={instagramUrl}
+                  className="katun-link tap"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  @{site.instagram}
+                </a>
+              </li>
+              <li>
+                <span className="label">WhatsApp</span>
+                <a
+                  href={whatsappUrl}
+                  className="katun-link tap"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Buka percakapan
+                </a>
+              </li>
+              <li>
+                <span className="label">Lokasi</span>
+                <span>{site.location}</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="kontak-kanan">
+            <ContactForm />
+          </div>
+        </div>
+
+        <div className="selvedge selvedge-kanan">
+          <span className="selvedge-teks emas">{site.location.split(",")[0]}</span>
+        </div>
       </div>
     </section>
   );
