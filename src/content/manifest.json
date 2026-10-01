@@ -137,35 +137,41 @@
     "height": 2545,
     "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABwAwCdASoQABcAPu1kqU2ppaQiMAgBMB2JZQAASoMH7t3lJgAA/vOB/6KggHXPCwum0YmPZfe7Txy4znQW+HSrj/BXqzOk2Cz/tczHDHi9mN/huwEYDX3TbYAAAA=="
   },
-  "intern/1111.png": {
-    "src": "/works/intern/1111-4ea188.webp",
-    "width": 1237,
-    "height": 1311,
-    "blurDataURL": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAwBACdASoQABEAPu1iqU2ppaOiMAgBMB2JYgCdMoAC7xhCzAkiLiNFaQAA/thPtMRQf8dN5+H5BF+CwLPjJQAecs7rzeXtUdCPn8oKXXl0Le7vqBpyBZ7EjZ+B2mvhAqqxcV+ugUAnG7IrJ5Ygnok95syKcXynHb/5Plr9Bejfsjq2yvppuDYyyC4sQjQpwAA="
+  "intern/1.png": {
+    "src": "/works/intern/1-5c20dc.webp",
+    "width": 1414,
+    "height": 2000,
+    "blurDataURL": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAADQAwCdASoQABcAPu1iqU2ppaOiMAgBMB2JQAB8pUGby8IQs0xAFQAA/vNv4AJCWc9eDGQR/JfrkRoVJa6Rd8NPzxzeZgT9oEoXVsuc2U8Dj+QS63jtpwYykLev/DEjxqVELHtCPgsBtv3z1pCLx5J/z6vcYJ9VNdfjnRA/5+CehUxff4n9lV/MpZnhM+lS0flv7v868qf7QXeuKnOgKaDzWAA="
   },
-  "intern/2222.png": {
-    "src": "/works/intern/2222-1ab1e2.webp",
-    "width": 1059,
-    "height": 1313,
-    "blurDataURL": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAACQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JQBOgAgnBMuUFG9R4AP7iet6Tq/UiOV5v7i1Uoiuz8oww8+gjtfvuK941BXk3WhqhTppkQdToEd/J3mFoVg0oTEnbH7cjX+13+DTtbyaiJU48xE6K1Vgs0Xdp7zHK844ogQ6a2ym3RjtAAAA="
+  "intern/2.png": {
+    "src": "/works/intern/2-278cad.webp",
+    "width": 1414,
+    "height": 2000,
+    "blurDataURL": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACwAwCdASoQABcAPu1kqk2ppaQiMAgBMB2JQAALfFrlcdsKIvwYgAD+83AZ+Dc4LBEya0wUkxDAyYe4lUTbUSNtC0pzlKqI9ET2N6BP4YaYH1a+XfT9Yfdy8F6D5V0RmCzqjAkK4SgYHrzN1xHsJPemdMCvYTH+krYRgUAA"
   },
-  "intern/3333.png": {
-    "src": "/works/intern/3333-ddbbef.webp",
-    "width": 1039,
-    "height": 1347,
-    "blurDataURL": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAAAQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JQBdgO4Agc5ZYeqA1qH9QKAD+2GdVdpRSP0l5x9sL+G8jj15nwYx0nXilXGlrHpITCQ0iwsZoDlreJ78VoJM7E95cFtr/o8tK4Cfw8XnE+F8xf2dFWdSYCId+Sqw+fgTRJRXd+rfKmXpx+KlVzPkYOML+1oATj/1g1ySOMHIiShnAAAA="
+  "intern/3.png": {
+    "src": "/works/intern/3-bd4731.webp",
+    "width": 1414,
+    "height": 2000,
+    "blurDataURL": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADwAwCdASoQABcAPu1iqU2ppaQiMAgBMB2JQAALY8XB5FE9V4GUs7qAAP7zfPDTAe3jSuOGfd/kO5nw+iySL14zwWlwN8jviTdFdoZQ0uOx6CAWmwRMeinnaH7zrB5TJ96U8CFBIkjIr5UD0HJOHeh+2Lp2XGKkuVUETq5c4ORCYok8KRoZqgAA"
   },
-  "intern/4444.png": {
-    "src": "/works/intern/4444-dfe922.webp",
-    "width": 886,
-    "height": 1359,
-    "blurDataURL": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAADwAwCdASoQABkAPu1iqU2ppaOiMAgBMB2JQBOgZYAv02GfAFJO9hkAAP7ieDBB5G9RuRdNM2WSyEUa2GBFrTArbIOFQhhfnz7EirxOegesC7He3k/1Ai251+eNWrbkXRpXqEnyfqXPIkk3MYBlLc1v+maHgNDxsPACvVYUViS6TVVlVcYsq6nXfWCOS9+NBmnGAayf8cxkOoeRKOyHiz0AAAA="
+  "intern/4.png": {
+    "src": "/works/intern/4-e3039f.webp",
+    "width": 1414,
+    "height": 2000,
+    "blurDataURL": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADwAwCdASoQABcAPu1iqU2ppaOiMAgBMB2JYwC7AYvg3npOF0VaIEVAAP7zfm/njlS84AWyaAWrBeGj+g18BGavlfRZ6A5A4rOp8QsQXzZ6hEQY84aRPUxJh0VZH3GTy2/uM76949NKpK9eYWvw0lukuJSquzXOh3fTlmNvw9l6uCIAAAA="
   },
-  "intern/5555.png": {
-    "src": "/works/intern/5555-829509.webp",
-    "width": 1056,
-    "height": 1368,
-    "blurDataURL": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAAAwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JYgCdB3gVyYMkhqU7Jenx6kAA/uI7CL+HjjkYFw9GV2hMEbZRvjn7Akkjgpu0BCqNUHXLIqaWD1E/Z6A2B0bxCF/pfZ10YkFs+LA8dXOisR8RtD2K4YcZNbf8Al9mGoN/oPxzbvm25V16Tkz9snoWD7jMmAXhu2/O/pQXTWv5wzFsH6fonLc4TAEHAAAA"
+  "intern/5.png": {
+    "src": "/works/intern/5-ee6734.webp",
+    "width": 1414,
+    "height": 2000,
+    "blurDataURL": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAAAQBACdASoQABcAPu1iqU2ppaOiMAgBMB2JQBfnMYibyOvG+2g/eA5rQAD+8340mvyYbofcWkMtsOtYz39X/OkOzkJIBDAkMiQFwNUKCo18fXsj/BuPZzjT5RPepJPj7DQJj6deM5O5uUWCOZmLTtPqajtIoIr/H6T+QEl6epC0lzbZuMX0fZExm7f0NFEchINZ9OPaqecvhU6vowAAAA=="
+  },
+  "intern/cover (1).png": {
+    "src": "/works/intern/cover-1-69c4f8.webp",
+    "width": 1800,
+    "height": 1273,
+    "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAADwAQCdASoQAAsAA4BaJZQBTAHgAMgoSQAA/vgZfcJRm06Qa7RPmaBsf0eeYym4xZPknTrd6Th40psGETWxoj1A/WwQUhMfqj17AKfSUNqGyYN4SlPmCK0yFfR69iMsW6MMTbSKEnzrrxyNAAA="
   },
   "project bank bpd diy/1.png": {
     "src": "/works/project-bank-bpd-diy/1-5c20dc.webp",
@@ -286,6 +292,12 @@
     "width": 1800,
     "height": 1273,
     "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAAsAA4BaJYwAAp1dkv9lBoAA/vYZYWzbpu5umcv97LghzE/CdVfz9R5nOr34XkOk1q8rD1/VyYHbx+UgOqqiH099T6cWAAA="
+  },
+  "sunlit minimalism/04 lima tampilan.png#pita": {
+    "src": "/works/sunlit-minimalism/04-lima-tampilan-a1ba78-pita.webp",
+    "width": 2400,
+    "height": 1408,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAwAgCdASoQAAkAA4BaJYwCdAfwBb0q+Ih7AAD+9RoMSaTarDuRJfRXO2+jKVBNPJzs7C4IXgBZl1UjXAiMAMWENBAPuvPRgbIAAA=="
   },
   "sunlit minimalism/05 look 1 gambar teknis.png": {
     "src": "/works/sunlit-minimalism/05-look-1-gambar-teknis-482711.webp",

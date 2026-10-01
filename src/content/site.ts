@@ -23,14 +23,10 @@ export const site = {
   /** Nomor WhatsApp, format internasional tanpa + atau spasi (+62 895-3904-49302). */
   whatsapp: "62895390449302",
 
-  /**
-   * TODO: periksa & sunting — draf ini disusun dari karya di folder works/.
-   * Tulis ulang dengan suaramu sendiri; ini yang pertama dibaca orang.
-   */
+  /** Paragraf pertama juga tampil di halaman depan dan pratinjau media sosial. */
   bio: [
-    "Saya merancang busana dan motif permukaan yang berangkat dari khazanah visual Indonesia — wayang kulit, batik pesisir, ragam hias yang sudah lama hidup di kain — lalu menerjemahkannya ke pakaian yang benar-benar dipakai orang setiap hari.",
-    "Alurnya selalu sama: riset visual, stilasi bentuk jadi motif, lalu diturunkan ke pola dan lembar teknis yang siap masuk produksi. Karena itu sebagian besar karya di sini berpasangan — satu lembar motif, satu lembar spesifikasi jahitan.",
-    "Sebagian proyek bersifat komersial, seperti seragam korporat untuk lingkungan perbankan dan farmasi, di mana identitas perusahaan harus ditampung tanpa mengorbankan kenyamanan pemakainya.",
+    "Saya memiliki ketertarikan dalam mengembangkan ide menjadi desain yang fungsional, estetis, dan memiliki karakter. Melalui riset tren, pengembangan konsep, serta pembuatan gambar kerja busana, saya berusaha menghasilkan desain yang tidak hanya menarik secara visual, tetapi juga memiliki pertimbangan terhadap detail dan kebutuhan pengguna.",
+    "Saya selalu terbuka untuk belajar dan mengembangkan keterampilan, serta terus mengeksplorasi ide-ide baru dalam menciptakan desain yang memadukan kreativitas, fungsionalitas, dan perhatian terhadap detail.",
   ],
 
   /**
@@ -42,7 +38,7 @@ export const site = {
 
   /** Ditampilkan di halaman Tentang. */
   skills: [
-    "Ilustrasi mode & croquis",
+    "Ilustrasi mode",
     "Lembar teknis dan spesifikasi produksi",
     "Desain motif & repeat permukaan",
     "Desain seragam korporat",

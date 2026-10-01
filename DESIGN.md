@@ -244,7 +244,7 @@ Palet ini adalah empat benang di atas satu warna dasar kain: katun untuk teks, m
 
 Model spasial adalah alat tenun: grid tiga kolom `loom` dengan kolom selvedge `clamp(2.25rem, 4vw, 3.5rem)` di kiri dan kanan serta `minmax(0, 1fr)` di tengah. Setiap seksi dan baris pakan (`.tenun`, `.pakan`, `.lembar`, `.loom`) memakai kolom yang sama, sehingga label vertikal selvedge sejajar di seluruh halaman. Di dalam kolom tengah, konten dibagi 12 kolom dengan gap `clamp(1rem, 2.5vw, 2.5rem)`.
 
-Baris pakan (`.pakan`) adalah unit konten. Sisi bergantian kiri dan kanan per indeks. Gambar merangkak melewati kolom selvedge (`margin-left/right: calc(-1 * var(--selvedge))`) sehingga menyentuh tepi kain; teks menempati sisa kolom. Lebar menyandikan bobot: `data-bobot="lebar"` (koleksi busana, seragam korporat, motif permukaan) memberi gambar 8 kolom dan teks 4; `data-bobot="sempit"` (studi, lembar tunggal) memberi gambar 5 kolom dan teks 5. Halaman proyek memakai tiga bentuk lembar: `lebar` (12 kolom, meluber ke kedua selvedge), `pasang` (6 + 6, lembar motif berpasangan dengan lembar teknis), dan `tunggal` (7 kolom, merangkak ke satu sisi). Sertifikat: gambar 6 kolom, teks 5.
+Baris pakan (`.pakan`) adalah unit konten. Sisi bergantian kiri dan kanan per indeks. Gambar merangkak melewati kolom selvedge (`margin-left/right: calc(-1 * var(--selvedge))`) sehingga menyentuh tepi kain; teks menempati sisa kolom. Lebar menyandikan bobot: `data-bobot="lebar"` (koleksi busana, seragam korporat, motif permukaan) memberi gambar 8 kolom dan teks 4; `data-bobot="sempit"` (studi, lembar tunggal) memberi gambar 5 kolom dan teks 5. Halaman proyek memakai tiga bentuk lembar: `lebar` (12 kolom, meluber ke kedua selvedge), `pasang` (6 + 6, lembar motif berpasangan dengan lembar teknis), dan `tunggal` (6 kolom di tengah, seukuran lembar pasangan; untuk lembar tegak tanpa pasangan). Sertifikat: gambar 6 kolom, teks 5.
 
 Irama vertikal: padding blok baris pakan `clamp(2rem, 5vw, 4.5rem)`; kepala halaman `clamp(2.5rem, 6vw, 5rem)`; jarak antar-seksi besar `clamp(3rem, 8vw, 7rem)`. Padding horizontal di luar grid loom (sisir, kepala Karya, bar penampil) memakai `gutter` `clamp(1.25rem, 4.5vw, 4.5rem)`. Sisir setinggi 3.5rem, sticky, dengan gigi 7px di bawahnya. Viewport pertama mengisi `calc(100svh - 3.5rem - 4.5rem)`; pita hero setinggi `clamp(200px, 38svh, 520px)` dan selebar kolom tengah plus dua selvedge.
 
@@ -253,13 +253,13 @@ Responsif, satu breakpoint utama dan tiga penunjang:
 - **≤720px**: label teropong disembunyikan; kolom bawah hero jadi satu kolom.
 - **≤560px**: kolom keahlian dan bar penampil membungkus.
 - **≤420px**: nav sisir merapat (gap 0.6rem, 0.8rem).
-- **≥861px**: pita hero memindah `object-position` ke `50% 6%`.
+- Pita hero rata atas (`object-position: 50% 0`) di semua lebar: kepala sampai pinggul di layar lebar, figur setinggi pita di ponsel. Gambarnya potongan `#pita` dari lembar lima tampilan Sunlit Minimalism (judul lembar dan tepi kosong dibuang oleh `CROPS` di `scripts/prepare-assets.mjs`).
 
 Body memakai `overflow-x: clip` (bukan hidden) agar pita dan gambar yang meluber tidak membuat kontainer gulir baru; `.weft` juga `overflow-x: clip` untuk geseran masuk.
 
 ## Elevation & Depth
 
-Sistem ini datar sepenuhnya: tidak ada bayangan, tidak ada lapisan tonal, tidak ada blur. Kedalaman disampaikan oleh tumpang tindih tenunan: nama menembus pita hero lewat salinan bertopeng garis horizontal (`mask-image: repeating-linear-gradient(to bottom, #000 0 8px, transparent 8px 14px)`), sisir sticky memakai warna dan tekstur lusi yang sama dengan kain sehingga terbaca sebagai bagian alat, dan penampil membuka di atas `::backdrop` nila-dalam 96% dengan tekstur lusi yang sama. Satu-satunya `box-shadow` di seluruh CSS adalah `0 1px 0 0 var(--mengkudu-terang)` pada field yang fokus, yang berfungsi menebalkan garis bawah menjadi benang 2px, bukan mengangkat elemen.
+Sistem ini datar sepenuhnya: tidak ada bayangan, tidak ada lapisan tonal, tidak ada blur. Kedalaman disampaikan oleh tumpang tindih tenunan: nama menembus pita hero lewat salinan bertopeng garis horizontal (`mask-image: repeating-linear-gradient(to bottom, #000 0 8px, transparent 8px 14px)`) yang berwarna `nila` di atas lembar putih pita dan dipotong tepat di kedua tepi pita (`clip-path: inset(calc(0.55 * var(--nama-fs) + 1px) -1em)`), sehingga huruf katun di atas nila berganti menjadi benang nila di atas kertas, sisir sticky memakai warna dan tekstur lusi yang sama dengan kain sehingga terbaca sebagai bagian alat, dan penampil membuka di atas `::backdrop` nila-dalam 96% dengan tekstur lusi yang sama. Satu-satunya `box-shadow` di seluruh CSS adalah `0 1px 0 0 var(--mengkudu-terang)` pada field yang fokus, yang berfungsi menebalkan garis bawah menjadi benang 2px, bukan mengangkat elemen.
 
 ### Named Rules
 **The Tanpa Bayangan Rule.** Tidak ada `box-shadow` atau `drop-shadow` untuk mengangkat permukaan. Pemisahan antar-elemen adalah benang 1px atau ruang kosong. Hover mengubah warna benang atau menggeser 1px (`translateY(1px)` saat tombol ditekan), bukan menambah bayangan.
@@ -287,6 +287,9 @@ Balok merah yang terbaca sebagai heddle alat tenun: tegas, tanpa lengkung, denga
 
 ### Cards / Containers
 Tidak ada kartu. Unit konten adalah baris pakan (`pakan`): grid loom dengan padding blok `clamp(2rem, 5vw, 4.5rem)`, satu benang 1px `katun-12` di tepi atas (`::before`), tanpa latar, tanpa border samping, tanpa radius. Teks di dalamnya bersusun vertikal dengan gap 0.6rem: judul `display-m`, subjudul `redup` 1rem, ringkasan, peran 0.85rem `redup`, tautan `benang-link` 0.95rem. Hover pada tautan pakan mewarnai judul `mengkudu-hover`. Lembar galeri (`lembar`) mengikuti pola yang sama dengan tombol zoom `lembar-tombol` (kursor `zoom-in`, hover opacity 0.94) dan keterangan 0.875rem `redup`.
+
+### Kelompok
+Proyek yang memuat beberapa pekerjaan (Freelance Report: seragam Bank BPD DIY, Bank CCB, Batik Kimia Farma) membagi galerinya per `kelompok`. Tiap kelompok dibuka satu benang 1px `katun-30` melintang penuh, lebih terang dari ujung lemparan `katun-12`, lalu `kelompok-kepala`: judul `display-m` di kiri dan hitungan `num` 0.8rem (`07 lembar`) di kanan, sejajar kolom tengah loom, padding atas `clamp(2.5rem, 6vw, 5rem)`. Lembar pertama menempel pada judulnya tanpa benang, padding atas `clamp(1.25rem, 3vw, 2.25rem)`. Di bawah deskripsi proyek, nama kelompok tampil sebagai `benang-daftar` berisi jangkar `katun-link` (`scroll-margin-top` setinggi sisir); di beranda daftar yang sama tampil di baris pakan tanpa tautan. Nama kelompok ikut menaiki teropong lewat `data-bagian`.
 
 ### Inputs / Fields
 - **Style:** latar transparan, tanpa border kecuali garis bawah 1px `katun-30`, padding `0.6rem 0`, teks `katun` 1.0625rem, radius 0. Label 0.85rem `redup` di atas dengan gap 0.4rem; placeholder `redup` opasitas penuh. Textarea `resize: vertical`, min 8rem.

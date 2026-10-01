@@ -13,13 +13,11 @@ disentuh untuk memperbarui isi website.
 **`src/content/site.ts`** — data diri
 - `location` — periksa kota tempat kamu berbasis
 - `replyNote` — janji waktu balas; kosongkan kalau tidak ingin berjanji
-- `bio` — tiga paragraf draf, tulis ulang dengan suaramu sendiri
 - `education` — periksa tahun dan nama jurusan
 
 **`src/content/projects.ts`** — karya
 - `year` tiap proyek — angkanya perkiraan dari tanggal berkas, bukan catatan resmi
-- `role` tiap proyek — periksa perannya benar
-- `body` — paragraf proses, disusun dari apa yang terlihat di gambar
+- `body` di proyek Nirmana — paragraf draf, disusun dari apa yang terlihat di gambar
 
 **Alamat website** — diambil otomatis dari domain produksi Vercel. Kalau
 memakai domain sendiri, isi `NEXT_PUBLIC_SITE_URL` (di Vercel: Settings →
@@ -47,6 +45,15 @@ menyebutkannya di akhir. Kalau ada yang terdaftar tapi belum diproses,
 `npm run build` akan gagal dengan pesan yang menyebut nama berkasnya —
 sengaja, supaya karya tidak diam-diam hilang dari website.
 
+Satu proyek boleh memuat beberapa pekerjaan (lihat Freelance Report): beri
+`group` pada lembar pertama tiap pekerjaan, dan `dir` pada lembar yang berkasnya
+ada di folder lain. Halaman proyek lalu menampilkan judul dan jumlah lembar
+tiap kelompok.
+
+Gambar pita di halaman depan adalah potongan dari
+`works/sunlit minimalism/04 lima tampilan.png`. Untuk menggantinya, ubah `PITA`
+di `src/app/page.tsx` dan daftar `CROPS` di `scripts/prepare-assets.mjs`.
+
 Folder `works/` tidak ikut ter-deploy. Yang dipakai website hanya turunan
 `.webp` di `public/works/`.
 
@@ -66,7 +73,7 @@ vercel deploy --prod   # tayang
 
 ```
 src/content/site.ts        data diri dan bio
-src/content/projects.ts    daftar 9 proyek + 3 sertifikat
+src/content/projects.ts    daftar 7 proyek + 3 sertifikat
 src/content/manifest.json  dihasilkan npm run assets — jangan disunting tangan
 src/app/globals.css        warna, tipografi, seluruh tata letak
 src/app/page.tsx           halaman depan
@@ -96,7 +103,8 @@ sedang ditenun di alat tenun bukan mesin. Latar nila bertekstur benang lusi
 vertikal; setiap baris karya adalah satu lemparan benang pakan yang masuk dari
 kiri dan kanan bergantian; satu benang merah mengkudu (teropong) di tepi kiri
 layar menandai kemajuan gulir dan aksi utama; angka yang dihitung memakai emas.
-Nama di halaman depan terjalin menembus pita gambar koleksi Srikandi.
+Nama di halaman depan terjalin menembus pita gambar lima tampilan Sunlit
+Minimalism.
 
 Token, kontras, huruf (Bricolage Grotesque dan Azeret Mono), komponen, dan
 aturan gerak dicatat lengkap di `DESIGN.md`. Konteks produk yang mendasari

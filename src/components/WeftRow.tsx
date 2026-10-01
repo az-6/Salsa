@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Weft from "@/components/Weft";
-import type { Project } from "@/content/projects";
+import { groupsOf, type Project } from "@/content/projects";
 import { getImage } from "@/lib/images";
 
 type Props = {
@@ -20,7 +20,10 @@ const duaDigit = (n: number) => String(n).padStart(2, "0");
 export default function WeftRow({ project, index, total }: Props) {
   const cover = getImage(project.dir, project.cover);
   const coverAlt =
-    project.shots.find((shot) => shot.file === project.cover)?.alt ?? project.summary;
+    project.coverAlt ??
+    project.shots.find((shot) => !shot.dir && shot.file === project.cover)?.alt ??
+    project.summary;
+  const groups = groupsOf(project);
   const side = index % 2 === 0 ? "left" : "right";
   const bobot = LEBAR.has(project.kind) ? "lebar" : "sempit";
   const nomor = `${duaDigit(index + 1)}/${duaDigit(total)}`;
@@ -60,15 +63,22 @@ export default function WeftRow({ project, index, total }: Props) {
             />
           </span>
 
-          <span className="pakan-teks">
+          <div className="pakan-teks">
             <span className="display-m pakan-judul">{project.title}</span>
             <span className="pakan-sub">{project.subtitle}</span>
             <span className="pakan-ringkas">{project.summary}</span>
+            {groups.length > 0 ? (
+              <ul className="benang-daftar pakan-daftar">
+                {groups.map((group) => (
+                  <li key={group}>{group}</li>
+                ))}
+              </ul>
+            ) : null}
             <span className="pakan-peran">{project.role}</span>
             <span className="pakan-lihat benang-link">
               Buka {project.shots.length} lembar
             </span>
-          </span>
+          </div>
         </Link>
       </div>
 

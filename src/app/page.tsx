@@ -7,19 +7,22 @@ import { projects } from "@/content/projects";
 import { site } from "@/content/site";
 import { getImage } from "@/lib/images";
 
-/** Pita yang melintas di antara dua baris nama: tiga tampilan koleksi Srikandi. */
-const PITA = { dir: "fashion illustration", file: "14.png" } as const;
+/**
+ * Pita yang melintas di antara dua baris nama: lima tampilan Sunlit Minimalism.
+ * Potongan "#pita" dibuat `npm run assets` dari lembar aslinya (lihat CROPS).
+ */
+const PITA = { dir: "sunlit minimalism", file: "04 lima tampilan.png" } as const;
 
 const tahunAwal = Math.min(...projects.map((p) => Number(p.year)));
 const tahunAkhir = Math.max(...projects.map((p) => Number(p.year)));
 
 export default function HomePage() {
-  const pita = getImage(PITA.dir, PITA.file);
+  const pita = getImage(PITA.dir, `${PITA.file}#pita`);
   const pitaAlt =
     projects
       .find((p) => p.dir === PITA.dir)
       ?.shots.find((shot) => shot.file === PITA.file)?.alt ??
-    "Tiga tampilan koleksi Srikandi";
+    "Lima tampilan koleksi Sunlit Minimalism";
 
   const [nama, ...sisa] = site.name.split(" ");
   const namaKedua = sisa.join(" ");

@@ -55,9 +55,11 @@ ilustrasi mode semata.
   komponen, dan seluruh tampilan boleh ditata ulang total (konfirmasi pemilik:
   "tidak ada yang wajib, bebas ubah semuanya").
 - Bahasa konten: Indonesia. Versi Inggris tidak diputuskan (tidak diminta).
-- Konten yang ada: 9 proyek (Srikandi, Kipas Pesisir, Sunlit Minimalism, Jejak Laut, Seragam
-  Bank BPD DIY, Seragam Bank CCB, Seragam Kimia Farma, Gamis bertingkat, Nirmana),
-  3 sertifikat, bio 3 paragraf, 6 keahlian, 1 pendidikan.
+- Konten yang ada: 7 proyek (Srikandi, Persona Analisis, Ilustrasi Fashion/Sunlit
+  Minimalism, Nautica Guard, Freelance Report yang memuat seragam Bank BPD DIY, Bank
+  CCB, dan Batik Kimia Farma, Internship Report, Nirmana), 3 sertifikat, bio 2
+  paragraf, 6 keahlian, 1 pendidikan. Judul, subjudul, deskripsi, dan peran enam
+  proyek pertama serta bio adalah tulisan pemilik (2026-10-01) dan dipakai apa adanya.
 - Terminologi yang dipakai pemilik: "karya", "motif permukaan", "lembar teknis",
   "papan suasana", "koleksi busana", "seragam korporat".
 - Belum diputuskan: apakah klien korporat dan studio motif menjadi audiens yang
@@ -78,8 +80,8 @@ ilustrasi mode semata.
   `scripts/prepare-assets.mjs`.
 - Sertifikat asli di `works/certificate/` (Penggambar Motif Batik BNSP 2024,
   Program Pembinaan Mahasiswa Wirausaha 2024, KMI Expo XV 2024).
-- Teks proyek di `src/content/projects.ts` disusun dari gambar; tahun dan peran
-  ditandai TODO untuk diverifikasi pemilik.
+- Teks proyek di `src/content/projects.ts` ditulis pemilik (kecuali Nirmana, yang
+  masih draf dari gambar); tahun ditandai TODO untuk diverifikasi pemilik.
 - Kontak asli tersedia sejak 2026-10-01 di `src/content/site.ts`: email,
   Instagram, dan WhatsApp diisi pemilik.
 - Tidak ada foto profil; pemilik memutuskan situs tanpa potret (2026-10-01).

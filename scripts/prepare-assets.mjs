@@ -24,6 +24,25 @@ const maxWidthFor = (width, height) => (width / height >= 2 ? 2400 : 1800);
 
 const QUALITY = 82;
 
+/**
+ * Turunan terpotong di luar galeri, dicatat di manifest sebagai
+ * "<folder>/<berkas>#<nama>". `top` dan `bottom` adalah bagian tinggi lembar
+ * yang dibuang.
+ *
+ * pita: deretan figur untuk pita di halaman depan, tanpa judul lembar di atas
+ * dan tepi kosong di bawahnya.
+ */
+const CROPS = [
+  {
+    dir: "sunlit minimalism",
+    file: "04 lima tampilan.png",
+    name: "pita",
+    top: 0.09,
+    bottom: 0.08,
+    maxWidth: 2400,
+  },
+];
+
 /** "project bank bpd diy" -> "project-bank-bpd-diy" */
 export const slugify = (value) =>
   value
@@ -114,6 +133,48 @@ async function main() {
     };
 
     process.stdout.write(`  ${dir}/${file} -> ${width}x${height}\n`);
+
+    for (const crop of CROPS) {
+      if (crop.dir !== dir || crop.file !== file) continue;
+
+      const region = {
+        left: 0,
+        top: Math.round(meta.height * crop.top),
+        width: meta.width,
+        height: Math.round(meta.height * (1 - crop.top - crop.bottom)),
+      };
+      const cropWidth = Math.min(region.width, crop.maxWidth);
+      const cropHeight = Math.round((region.height / region.width) * cropWidth);
+      const cropName = `${outputName(file)}-${crop.name}.webp`;
+      const cropTarget = path.join(targetDir, cropName);
+
+      await input
+        .clone()
+        .extract(region)
+        .resize({ width: cropWidth, withoutEnlargement: true })
+        .flatten({ background: "#ffffff" })
+        .webp({ quality: QUALITY })
+        .toFile(cropTarget);
+
+      const cropBlur = await input
+        .clone()
+        .extract(region)
+        .resize({ width: 16 })
+        .flatten({ background: "#ffffff" })
+        .webp({ quality: 40 })
+        .toBuffer();
+
+      bytesOut += (await stat(cropTarget)).size;
+
+      manifest[`${dir}/${file}#${crop.name}`] = {
+        src: `/works/${slugify(dir)}/${cropName}`,
+        width: cropWidth,
+        height: cropHeight,
+        blurDataURL: `data:image/webp;base64,${cropBlur.toString("base64")}`,
+      };
+
+      process.stdout.write(`  ${dir}/${file}#${crop.name} -> ${cropWidth}x${cropHeight}\n`);
+    }
   }
 
   await writeFile(MANIFEST, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
@@ -129,6 +190,7 @@ async function main() {
   // supaya karya baru tidak diam-diam hilang dari website.
   const projectsSource = await readFile(path.join(ROOT, "src", "content", "projects.ts"), "utf8");
   const unused = Object.keys(manifest).filter((key) => {
+    if (key.includes("#")) return false;
     const file = key.slice(key.indexOf("/") + 1);
     return !projectsSource.includes(JSON.stringify(file).slice(1, -1));
   });

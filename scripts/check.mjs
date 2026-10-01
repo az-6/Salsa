@@ -101,7 +101,7 @@ const expect = (passed, label, detail) => {
   console.log("\nGambar termuat");
   const page = await browser.newPage();
   await page.setViewport({ width: 1440, height: 900 });
-  for (const path of ["/", "/karya/jejak-laut", "/sertifikat"]) {
+  for (const path of ["/", "/karya/freelance-report", "/sertifikat"]) {
     await page.goto(BASE + path, { waitUntil: "networkidle0" });
     await page.evaluate(async () => {
       const step = window.innerHeight * 0.8;

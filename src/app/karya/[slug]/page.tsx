@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import Gallery, { type GalleryItem } from "@/components/Gallery";
-import { getProject, projects } from "@/content/projects";
+import { getProject, groupsOf, projects } from "@/content/projects";
 import { getImage } from "@/lib/images";
 
 type Params = { slug: string };
@@ -29,16 +29,27 @@ export async function generateMetadata({
 
 const duaDigit = (n: number) => String(n).padStart(2, "0");
 
+/** "Seragam Bank BPD DIY" -> "seragam-bank-bpd-diy", jangkar kelompok di halaman. */
+const groupId = (group: string) =>
+  group
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
 export default async function ProjectPage({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) notFound();
 
   const items: GalleryItem[] = project.shots.map((shot) => ({
-    ...getImage(project.dir, shot.file),
+    ...getImage(shot.dir ?? project.dir, shot.file),
     alt: shot.alt,
     caption: shot.caption,
+    group: shot.group ? { id: groupId(shot.group), title: shot.group } : undefined,
   }));
+
+  const paragraphs = project.body ?? [project.summary];
+  const groups = groupsOf(project);
 
   const position = projects.findIndex((entry) => entry.slug === project.slug);
   const next = projects[(position + 1) % projects.length];
@@ -90,9 +101,20 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
 
         <div className="kain-isi loom">
           <div className="prose">
-            {project.body.map((paragraph) => (
+            {paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
+            {groups.length > 0 ? (
+              <ul className="benang-daftar">
+                {groups.map((group) => (
+                  <li key={group}>
+                    <a href={`#${groupId(group)}`} className="katun-link tap">
+                      {group}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
           </div>
         </div>
 

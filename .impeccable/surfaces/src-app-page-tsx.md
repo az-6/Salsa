@@ -37,3 +37,11 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 - Janji waktu balas (`replyNote` di `src/content/site.ts`) adalah salinan situs lama yang belum dikonfirmasi ulang pemilik; kosongkan untuk menyembunyikannya.
 - Apakah klien korporat dan studio motif dilayani eksplisit di halaman: belum diputuskan; pita seragam korporat tetap tampil lebar sebagai bukti tanpa seksi khusus.
+
+## Perubahan atas permintaan pemilik (2026-10-01)
+
+Bagian ini menggantikan butir kontrak di atas bila berbeda.
+
+- Pita hero memakai lima tampilan Sunlit Minimalism (`works/sunlit minimalism/04 lima tampilan.png`, potongan `#pita`), bukan tiga tampilan Srikandi. Lembarnya berlatar putih, jadi salinan nama di atas pita berwarna nila dan dipotong di tepi pita.
+- Bukti kini 7 proyek: Srikandi, Persona Analisis, Ilustrasi Fashion (Sunlit Minimalism), Nautica Guard, Freelance Report, Internship Report, Nirmana. Seragam Bank BPD DIY, Bank CCB, dan Batik Kimia Farma digabung dalam Freelance Report dan dipisah per kelompok di halaman proyeknya.
+- Judul, subjudul, deskripsi, dan peran enam proyek pertama serta bio dua paragraf adalah tulisan pemilik; dipakai apa adanya.

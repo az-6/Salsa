@@ -585,10 +585,15 @@ button {
   display: block;
 }
 
-/* Salinan di atas pita, bertopeng garis-garis: huruf tampak menembus kain. */
+/* Salinan di atas pita, bertopeng garis-garis: huruf tampak menembus kain.
+   Lembar pita berlatar putih, jadi benang yang melintas di atasnya nila, bukan
+   katun; salinan ini dipotong tepat di kedua tepi pita (pita mulai 0,55 tinggi
+   huruf dari atas blok nama) agar di luar pita huruf katun tetap utuh. */
 .tenun-nama.is-over {
   z-index: 3;
   pointer-events: none;
+  color: var(--nila);
+  clip-path: inset(calc(0.55 * var(--nama-fs) + 1px) -1em);
   -webkit-mask-image: repeating-linear-gradient(
     to bottom,
     #000 0 8px,
@@ -610,14 +615,9 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 28%;
-}
-
-/* Di layar lebar pita menampung kepala sampai pinggul, bukan tiga torso tanpa kepala. */
-@media (min-width: 861px) {
-  .tenun-pita img {
-    object-position: 50% 6%;
-  }
+  /* Rata atas: di layar lebar pita menampung kepala sampai pinggul; di ponsel
+     figur tampil setinggi pita. */
+  object-position: 50% 0;
 }
 
 /* Benang katun 1px di dua tepi lemparan pita. */
@@ -756,6 +756,11 @@ button {
 .pakan-ringkas {
   margin-top: 0.4rem;
   text-wrap: pretty;
+}
+
+/* Butir kelompok: pekerjaan yang dimuat satu proyek. */
+.pakan-daftar li {
+  padding-block: 0.2rem;
 }
 
 .pakan-peran {
@@ -973,6 +978,51 @@ button {
   padding-block: clamp(1rem, 3vw, 2rem) clamp(2rem, 5vw, 4rem);
 }
 
+.kain-isi .benang-daftar {
+  margin-top: 0.9rem;
+}
+
+/* Kelompok: satu proyek memuat beberapa pekerjaan. Tiap kelompok dibuka satu
+   benang yang lebih terang dari ujung lemparan biasa, lalu judul dan hitungan. */
+.kelompok {
+  position: relative;
+  scroll-margin-top: var(--sisir-h);
+}
+
+.kelompok::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--katun-30);
+}
+
+.kelompok-kepala {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(2.5rem, 6vw, 5rem) var(--selvedge) 0;
+}
+
+.kelompok-kepala .num {
+  flex: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+/* Lembar pertama menempel pada judul kelompoknya, tanpa benang di antaranya. */
+.kelompok-kepala + .lembar {
+  padding-top: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+.kelompok-kepala + .lembar::before {
+  content: none;
+}
+
 .lembar {
   position: relative;
   display: grid;
@@ -1020,14 +1070,9 @@ button {
   grid-column: 7 / span 6;
 }
 
-.lembar[data-bentuk="tunggal"][data-side="left"] .lembar-pelat {
-  grid-column: 1 / span 7;
-  margin-left: calc(-1 * var(--selvedge));
-}
-
-.lembar[data-bentuk="tunggal"][data-side="right"] .lembar-pelat {
-  grid-column: 6 / span 7;
-  margin-right: calc(-1 * var(--selvedge));
+/* Lembar tegak tanpa pasangan duduk di tengah, seukuran lembar pasangan. */
+.lembar[data-bentuk="tunggal"] .lembar-pelat {
+  grid-column: 4 / span 6;
 }
 
 .lembar-pelat {
